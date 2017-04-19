@@ -6,6 +6,6 @@ import at.eurogast.app.Artikel;
 
 public interface Exporter {
 	
-	public void exportieren(ArrayList<Artikel> a);
+	public void exportieren(ArrayList<Artikel> artikel);
 
 }
