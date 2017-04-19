@@ -16,8 +16,9 @@ public class JSONExporter implements Exporter{
 			builder.append("\t \"Einkaufspreis\": " + a.getEinkaufspreis()+",");
 			builder.append("\t \"Ablaufdatum\": \"" + a.getAblaufdatum() +"\",");
 			builder.append("\t \"Kategorienummer\": " + a.getKategorienummer());
-			builder.append("}");
+			builder.append("}\n");
 		}
+		System.out.println(builder.toString());
 		
 	}
 
