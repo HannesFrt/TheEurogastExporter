@@ -14,24 +14,26 @@ public class app {
 		Exporter jsonexp = new JSONExporter();
 		
 		ArrayList<Artikel> artikelListe = artikellisteAusDBDummy();
-		ArrayList<Exporter> artikelExporte = new ArrayList<>();
+		ArrayList<Exporter> artikelExporter = new ArrayList<>();
 		
-		artikelExporte.add(csvexp);
-		artikelExporte.add(jsonexp);
+		artikelExporter.add(csvexp);
+		artikelExporter.add(jsonexp);
 		
 		switch (args[0].toString()) {
 		case "CSV":
 			System.out.println("CSV wird durchgeführt");
-			artikelExporte.get(0).exportieren(artikelListe);
+			Exporter e = artikelExporter.get(0);
+			e.exportieren(artikelListe);
 			break;
 		case "JSON":
 			System.out.println("JSON wird durchgeführt");			
-			artikelExporte.get(1).exportieren(artikelListe);
+			Exporter e1 = artikelExporter.get(1);
+					e1.exportieren(artikelListe);
 			break;
 
 		default:
 			System.out.println("Ungültige eingabe, CSV wird als Default durchgeführt");
-			artikelExporte.get(0).exportieren(artikelListe);
+			artikelExporter.get(0).exportieren(artikelListe);
 			break;
 		}
 	}
