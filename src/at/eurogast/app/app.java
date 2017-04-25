@@ -2,8 +2,6 @@ package at.eurogast.app;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.List;
-
 import at.eurogast.exporter.CSVexporter;
 import at.eurogast.exporter.Exporter;
 import at.eurogast.exporter.JSONExporter;
@@ -25,7 +23,7 @@ public class app {
 			break;
 
 		default:
-			System.out.println("Ungültige eingabe, CSV wird durchgeführt");
+			System.out.println("Ungültige eingabe, CSV wird als Default durchgeführt");
 			csvExport.exportieren(artikelListe);
 			break;
 		}

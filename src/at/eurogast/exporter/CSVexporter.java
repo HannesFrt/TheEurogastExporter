@@ -14,7 +14,7 @@ public class CSVexporter implements Exporter{
 			ausgabe.append(e.getEinkaufspreis()+",");
 			ausgabe.append(e.getKategorienummer()+",");
 			ausgabe.append(e.getNummer()+",");
-			ausgabe.append(e.getAblaufdatum().toZonedDateTime()+",");
+			ausgabe.append(e.getAblaufdatum().toZonedDateTime().toLocalDate()+"\n");
 		}
 		System.out.println(ausgabe.toString());
 	}
