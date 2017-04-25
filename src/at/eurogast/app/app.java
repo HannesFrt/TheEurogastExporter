@@ -9,22 +9,29 @@ import at.eurogast.exporter.JSONExporter;
 public class app {
 
 	public static void main(String[] args) {
+		
+		Exporter csvexp = new CSVexporter();
+		Exporter jsonexp = new JSONExporter();
+		
 		ArrayList<Artikel> artikelListe = artikellisteAusDBDummy();
-		Exporter csvExport = new CSVexporter();
-		Exporter jsonExporter = new JSONExporter();
+		ArrayList<Exporter> artikelExporte = new ArrayList<>();
+		
+		artikelExporte.add(csvexp);
+		artikelExporte.add(jsonexp);
+		
 		switch (args[0].toString()) {
 		case "CSV":
 			System.out.println("CSV wird durchgeführt");
-			csvExport.exportieren(artikelListe);
+			artikelExporte.get(0).exportieren(artikelListe);
 			break;
 		case "JSON":
-			System.out.println("JSON wird durchgeführt");
-			jsonExporter.exportieren(artikelListe);
+			System.out.println("JSON wird durchgeführt");			
+			artikelExporte.get(1).exportieren(artikelListe);
 			break;
 
 		default:
 			System.out.println("Ungültige eingabe, CSV wird als Default durchgeführt");
-			csvExport.exportieren(artikelListe);
+			artikelExporte.get(0).exportieren(artikelListe);
 			break;
 		}
 	}
